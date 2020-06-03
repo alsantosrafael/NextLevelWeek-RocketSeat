@@ -1,0 +1,130 @@
+
+#page-home {
+
+    margin-top: 48px;
+    height: 100vh;
+    background: url('../extras-aula-1/icones/home-background.svg') no-repeat;
+    background-position: 35vw bottom;
+
+}
+
+#page-home .content {
+
+    width: 90%; /*90% do tamanho da caixa na página se adapta na tela do usuário*/
+    max-width: 1100px;/* Fixa a expansao de tela até 1100 pixels*/
+    height: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#page-home header {
+
+    display: flex; /*Seguindo o modelo de caixas, ao utilizar o display com atributo flex eu consigo colocar elementos inseridos na caixa
+    conforme eu quiser ordená-los, tipo um quadrado do word*/
+    align-items: center;/*aqui eu alinho todos os elementos da caixa em uma linha central no eixo x*/
+    justify-content: space-between;/*aqui eu justifico todo o conteudo da caixa e coloco os elementos com espaco entre eles*/
+}
+
+
+#page-home header a{
+    display: flex;
+    color: var(--title-color);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+#page-home header a span {
+    margin-right: 16px;
+    display: flex;
+    background-image: url(../extras-aula-1/icones/log-in.svg);
+    width: 20px;
+    height: 20px;
+}
+
+#page-home main{
+
+    max-width: 560px;
+
+    /*height: 600px;*/
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+#page-home main h1{
+
+    font-size: 54px;
+
+
+}
+
+#page-home main p{
+
+    font-size: 24px;
+    line-height: 38px; /*espacamento de linha diferente*/
+    margin-top: 24px; /*separacao do texto de cima do que eu estou editando*/
+
+}
+
+#page-home main a{
+
+    width: 100%;/* Largura dinamica de 100% da disponibilidade da caixa*/
+    max-width: 360px;/*limitacao de 360 pixels para essa largura dinamica*/
+    height: 72px;
+    border-radius: 8px; /*atalho para arredondar todas as bordas da caixa*/
+
+    display: flex;
+    align-items: center;
+
+    margin-top: 40px; /* abaixa a caixa em relacao a caixa de cima*/
+
+    background-color: var(--primary-color);
+    transition: 400ms;/* Faz com que qualquer transicao que o botao ira sofrer ocorra num tempo de 400ms*/
+
+
+}
+
+
+#page-home main a:hover{/*Responsável por fazer o botao mudar de cor quando passar o mouse por cima dele*/
+
+    background-color: #2fb86e;
+} 
+
+#page-home main a span{
+
+    width: 72px;
+    height: 72px;
+    border-top-left-radius: 8px;/*arredondando uma rebarba que apareceu devido ao span*/
+    border-bottom-left-radius: 8px;/*arredondando uma rebarba que apareceu devido ao span*/
+    background-color: rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#page-home main a span::after{/*criacao de pseudoelemento sem utilizar o HTML*/
+    content:"";
+    background-image: url('../extras-aula-1/icones/search.svg');
+
+    width: 20px;
+    height: 20px;
+
+}
+
+#page-home main a strong{
+    flex: 1;
+    color: white;
+    text-align: center;
+
+}
+
+
+
+

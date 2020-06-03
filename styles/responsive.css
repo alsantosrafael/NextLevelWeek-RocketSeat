@@ -1,0 +1,61 @@
+/* Essa parte aqui é responsável por fazer um conjunto de regras que meu website vai seguir de forma 
+que ele seja responsivo para diferentes telas, isto é, vou manter a qualidade da minha página
+sem encavalar nada. Assim, eu defino quando o tamanho máximo da minha tela for tantos pixels,
+quero que o conteudo da tela fique assim, quando a tela for no minimo tantos pixels, quero que a tela
+fique assado.*/
+
+
+@media(max-width: 900px){
+    #page-home{
+            background-position-x: 70vw; /* Tudo do background é meio que escondido de forma que o conteudo nao se encavale até 900px*/
+
+    }
+
+    #page-home .content {
+
+        align-items: center;
+        text-align: center;
+    }
+
+    #page-home header a {
+        position: absolute;
+        bottom: 48px;
+
+        left: 50%; /* Joga conteúdo para 50% à esquerda*/
+        transform: translateX(-50%);/* faz com que a caixa a se posicione no ponto médio fazendo a caixa ficar no meio*/
+    }
+
+    #page-home main{
+        align-items: center;
+    }
+
+} /* Conjunto de regras para coisas que podemos configurar*/
+
+
+@media(min-width: 1700px){
+
+    #page-home{
+        background-position-x: 40vw; /* Novamente to fazendo com que o conteúdo nao se encavale. Mas aqui, quero posicionar a imagem
+        nao tao longe do centro. Aqui é no olhômetro mesmo. Testa e vê se ficou bom.*/
+    }
+}
+
+@media(max-height: 760px){
+    
+    #page-home {
+        background-position-y: 100px; /* Aqui estou fixando uma posicao para a imagempara que quando eu for diminuindo ela nao fique
+        saltando loucamente, para suavizar*/
+    }
+}
+
+@media(min-height: 1200px){/* o objetivo dessa regra é aproveitar melhor a cara do site, mantendo a caixa main mais em cima
+    quando a tela é maior*/
+    
+    #page-home main {
+        align-items: left;
+        text-align: left;
+        position: absolute;/* se nao aplicar isso nao consegue manter a posicao onde vc quer*/
+        top: 500px;/*posicao que eu quero manter*/
+    }
+}
+/* Depois faca uma regra para  fixar a caixa main quando a imagem fica fixa*/
