@@ -11,6 +11,7 @@
     <!--Importando arquivos do css para poder estilizar meu HTML--> 
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/home.css">  
+    <link rel="stylesheet" href="/styles/modal.css">  
     <link rel="stylesheet" href="/styles/responsive.css">
 
 
@@ -25,7 +26,7 @@
     
             <header>
                 <img src="/extras-aula-1/icones/logo.svg" alt="logomarca">
-                <a href="#">
+                <a href="/create-point.html">
                     <span></span>
                     Cadastre um ponto de coleta!
 
@@ -48,6 +49,27 @@
 
 
 
+    <!--Criacao da pagina de busca por ponto de coleta-->
 
+    <div id="modal" class="hide">
+        <div class="content">
+            <div class="header">
+                <h1>Pontos de coleta</h1>
+                <a href="#">Fechar</a>
+            </div>
+            <form action="/search-results.html"> 
+                <label for="search">Cidade:</label>
+                <div class="search field">
+                    <input type="text" name="search" placeholder="Escolha a cidade..."><!--Placeholder preenche a caixa de input-->
+                    <button>
+                        <img src="/extras-aula-1/icones/search.svg" alt="Buscar">
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="/Scripts/index.js"></script>
 </body>
 </html>

@@ -1,0 +1,98 @@
+/* To afim de criar uma tela que sobreponha a tela principal do Ecoleta.*/
+/*Sendo assim, é natural que criemos uma tela que ocupe toda a altura vista (100vh) e toda largura vista(vw)*/
+#modal{
+    background-color: #0E0A14ef;/*Cor de fundo*/
+    
+    height: 100vh;
+    width: 100vw;
+
+    position: fixed;/*Aqui eu to removendo o scroll da tela principal. Eu fixei a tela que to criando em cima da original*/
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 400ms;
+}
+
+#modal.hide{/*Aqui eu nao estou procurando o hide dentro do modal eu estou indo direto na classe do modal, por isso nao tem espaco*/
+    display: none;/*Aqui eu to escondendo a página de procura de ponto de coleta. Ela vai aparecer por 
+    meio de eventos ao clicar no botao usando JS.*/
+}
+
+#modal .content{
+    color: white;
+    width: 420px;
+}
+
+#modal .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 48px;
+}
+
+#modal .header a{
+    background-image: url(../extras-aula-1/icones/x.svg);
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+
+    font-size: 0.01px;/*Vou deixar o fechar na tela para auxilio audiovisual. Mas vou escondê-lo deixando muito pequeno.*/
+
+}
+#modal .header h1 {
+    color: white;
+
+    font-size: 36px;
+    line-height: 42px;
+}
+
+#modal form label {
+
+    font-size: 20px;
+    line-height: 16px;
+    
+    display: block;/*forco o display do label ser em bloco, pegar toda a largura da pagina*/
+    margin-bottom: 8px;
+}
+
+#modal form .field{
+
+    display: flex;
+}
+#modal form input{
+    flex:1;
+
+    background-color: var(--bg-color);
+
+    border-radius: 8px 0 0 8px;
+    border: 0;
+    
+
+    padding: 16px 24px;
+
+    font-size: 16px;
+    color: #0da1e6;
+    font-weight: bold;
+}
+
+#modal form button{
+
+    width: 72px;
+    height: 72px;
+
+    background-color: var(--primary-color);
+    border: 0;
+    border-radius: 0 8px 8px 0;
+
+}
+
+#modal form button:hover{
+
+    background-color: #2fb86e;
+    transition: 400ms;
+
+}

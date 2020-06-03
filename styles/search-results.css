@@ -1,0 +1,109 @@
+/*Colocando estilo no elemento de nome page-create-point*/
+
+/*Aqui é para criar a divisao da tela em cinza e branco*/
+body::after {
+    content:"";
+    position: fixed;
+    background: white;
+    top: 260px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+#page-search-results{
+    /*Primeiramente definimos o tamanho da tela.*/
+    width: 90%;/*largura maxima de 90%*/
+    max-width: 1100px;/*mas se a largura chegar a 1100px ela para de aumentar a caixa*/
+    
+    margin: 0 auto;/*colocando zero nas margens de cima e de baixo, mas preenchendo a margem automaticamente
+    das laterais.*/
+
+}
+
+#page-search-results header{ /*hora de estilizar a caixa header*/
+    margin-top: 48px;/*colocando uma margem de 20 pixels para abaixar um pouquinho o header*/
+    display: flex;/*famoso "quadrado" do word, mas agora com elementos da caixa header
+    Preciso fazer isso aqui antes de ajustar o conteúdo do site!! De outra forma nao funciona!*/
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+/*Estilizando caixa a*/
+#page-search-results header a{
+    color: var(--title-color);/*utilizando cor da variavel criada no main.
+    isso só é possível pq no meu create-point.html eu linkei meu <link rel="stylesheet" href="/styles/main.css">
+    onde a cor por sua vez foi definida!*/
+    font-weight: bold;/*Definindo peso da fonte da escrita*/
+    display: flex; /*Preparei aqui para o texto da caixa a poder ficar ao lado do span!*/
+    align-items: center;/*alinhando elementos texto e span ao centro*/
+
+}
+
+#page-search-results header a span{
+    margin-right: 16px;/* Aqui eu to meio que descolando o span do texto, forcando uma margem de 16 pxls aparecer
+    entre o texto e a imagem em si*/
+    background-image: url('../extras-aula-1/icones/arrow-left.svg');/*inserindo imagem! Note, só vai funcionar se eu inserir
+    a altura da imagem, a largura da imagem e o display:flex faz com que a figurinha fique alinhada ao lado do texto.*/
+    
+    display: flex;
+
+    width: 20px;
+    height: 24px;
+}
+
+main {
+    margin: 48px;
+}
+
+main h4 {
+    font-weight: normal;
+    font-family: Roboto, sans-serif;
+
+    margin-bottom: 32px;
+
+}
+main .cards{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+main img {
+    width:90%;
+    height:150px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+main .card h1 {
+    margin-top: 32px
+
+    font-size: 36px;
+    line-height: 41px;
+
+    color: #322153;
+}
+
+main .card h3 {
+
+    margin: 24px 0;
+
+    font-family: Roboto;
+    font-weight: bold;
+
+    font-size: 24px;
+    line-height: 34px;
+
+    color: var(--primary-color)
+}
+
+main .card p{
+    font-size: 16px;
+    line-height: 26px;
+
+    color: #6C6C80;
+}
+

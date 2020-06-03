@@ -3,6 +3,7 @@
 
     --title-color: #322153;
     --primary-color: #34cb79;
+    --bg-color:#f0f0f5;
 }
 /* "*" É uma palavra chave que diz que os atributos aqui passados, valem para todos os seletores*/
 * {
@@ -20,7 +21,7 @@ html {
 
 body {
 
-    background: #f0f0f5;
+    background: var(--bg-color);
     -webkit-font-smoothing: antialiased; /*melhora a imagem para as vistas*/
 }
 

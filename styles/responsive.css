@@ -29,6 +29,12 @@ fique assado.*/
         align-items: center;
     }
 
+    #page-search-results .cards{
+
+        grid-template-columns: 1fr;
+
+    }
+
 } /* Conjunto de regras para coisas que podemos configurar*/
 
 

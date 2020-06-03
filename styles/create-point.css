@@ -95,7 +95,7 @@ form .field-group {
 
 form input, 
 form select{
-    background-color: #f0f0f5;
+    background-color:var(--bg-color);
 
     border: 0;
     padding: 16px 24px;/*em cima e embaixo e nos lados, respectivamente*/
@@ -145,8 +145,59 @@ form button{
 
 form button:hover{
     background-color: #2fb86e;
+}
 
+.items-grid{/*Editando o estilo dessa classe*/
 
+    display: grid; /*Display grid é multidimensional!*/
+    grid-template-columns: 1fr 1fr 1fr; /*Aqui eu configuro o grid. Nesse caso, estou dividindo em 3 colunas com fracao da tela cada!*/
+    gap: 16px;/*Dividi o grid com um gap de 16 px para cada celula da matriz*/
+}
 
+.items-grid li {
 
+    background-color: #f5f5f5;
+    list-style: none; /*removendo aqueles pontinhos de tópico que toda lista tem.*/
+
+    border: 2px solid #f5f5f5;
+    border-radius: 8px;
+
+    height: 180px;
+    padding: 32px 24px 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    
+    text-align: center;
+    cursor: pointer; /* Quando a setinha do mouse chegar em cima de cada elemento, ele vira uma maozinha*/
+
+}
+
+.items-grid li span{
+    margin-top: 12px;
+
+    flex: 1; /* Preenche todo o espaco*/
+
+    display: flex;/*Permite eu fazer alinhamentos quaisquer*/
+    align-items: center;/*alinha a galera ao centro*/
+    color: var(--title-color);
+
+}
+
+.items-grid li.selected {/*Procure dentro do li a classe "selected" Estou aqui configurando o estilo da acao selecionar o item. Para tanto, nos escolhemos um elemento
+    aleatório dentro do li para dizer que foi "selected". Aqui no css vou configurar os estilos que vao aparecer quando a classe selected for ativada.*/
+
+    background: #e1faec;
+    border: 2px solid #34cb79;
+
+}
+
+/*Estou eliminando aqui o fato de eu clicar em cima da imagem ou sobre o span e gerar um evento.
+ To colocando o target apenas no li*/
+.items-grid li img, 
+.items-grid li span {
+
+    pointer-events: none;
 }
