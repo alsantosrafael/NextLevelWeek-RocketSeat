@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8"> <!--Esse atributo da meta tag é responsável por aceitar caracteres especiais tipo çã-->
+    <!--essa meta configura que a página do website caiba em vários tamanhos-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:ital,wght@0,700;1,300&display=swap" rel="stylesheet">
+    <!--Importando arquivos do css para poder estilizar meu HTML--> 
+    <link rel="stylesheet" href="/styles/main.css">
+
+    {% block styles %}
+    {% endblock styles %}
+    
+    
+    <link rel="stylesheet" href="/styles/responsive.css">
+
+
+</head>
+<body>
+
+    <div id="{{ pageId }}">
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+    {% block modal %}
+    {% endblock modal %}
+
+    {% block scripts %}
+    {% endblock scripts %}
+
+</body>
+</html>

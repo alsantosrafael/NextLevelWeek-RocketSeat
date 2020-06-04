@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+
+{% set pageId = "page-create-point" %}
+
+{% block title %}
+    <title>Criar um ponto de coleta</title>
+{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/styles/create-point.css">
+{% endblock styles %}
+
+{% block content %}
+    {% include "partials/page-header.html" %}
+    <!--Criando meu primeiro formulário útil! Basta usar a tag form!-->
+    <form action="">
+        <h1>Cadastro de ponto de coleta</h1>
+        <!--Queremos com o Fieldset organizar os campos que iremos construir. Basicamente é uma divisao de elementos-->
+        <fieldset>
+            <legend>
+                <!--Título para o meu fieldset-->
+                <h2>Dados da entidade:</h2>
+            </legend>
+            <div class="field-group">
+                <div class="field">
+                    <label for="name">Nome da entidade:</label>
+                    <input type="text" name="name" required="required">
+                </div>
+                <div class="field">
+                    <label for="name">Imagem da entidade:</label>
+                    <input 
+                    type="url" 
+                    name="image"
+                    placeholder="http://" 
+                    required="required">
+                </div>
+            </div>
+
+            <div class="field-group">
+                <div class="field">
+                    <label for="address">Endereço:</label>
+                    <input type="text" name="address" required="required">
+                </div>
+
+                <div class="field">
+                    <label for="address2">Número/Complemento:</label>
+                    <input type="text" name="address2" required="required">
+                </div>
+            </div>
+
+            <div class="field-group">
+                <div class="field">
+                    <label for="state">Estado:</label>
+                    <select name="uf" required="required">
+                        <!--Tag para selecionar opcoes ja existentes-->
+                        <option value="">Selecione o estado...</option>
+                        <!--Define um valor padrao-->
+                    </select>
+
+                    <input type="hidden" name="state"><!--escondendo o campo no link--></div>
+
+                <div class="field">
+                    <label for="city">Cidade:</label>
+                    <select name="city" disabled="disabled" required="required">
+                        <!--Coloquei aqui disabled para nao deixar o usuario escolher cidade antes de escolher estado.-->
+                        <option value="">Seleciona a cidade</option>
+                        <!--Define um valor padrao-->
+                    </select>
+                </div>
+            </div>
+
+        </fieldset>
+
+        <fieldset>
+
+            <legend>
+                <h2>Itens de Coleta:</h2>
+                <span>Selecione um ou mais itens abaixo</span>
+            </legend>
+
+            <div class="items-grid">
+                <!--Criei uma lista que vai agrupar elementos. Coloquei uma imagem e criei um contâiner inline com o span para gerar uma legenda-->
+                <li data-id="1">
+                    <!--O atributo data-qualquerCoisaqueEuQuiser eu crio um identificador para essa caixa.-->
+                    <img src="/extras-aula-1/icones/lampadas.svg" alt="Lâmpadas">
+                    <span>Lâmpadas</span>
+                </li>
+                <li data-id="2">
+                    <img src="/extras-aula-1/icones/baterias.svg" alt="Pilhas e Baterias">
+                    <span>Pilhas e Baterias</span>
+                </li>
+                <li data-id="3">
+                    <img src="/extras-aula-1/icones/papeis-papelao.svg" alt="Papéis e Papelão">
+                    <span>Papéis e Papelão</span>
+                </li>
+                <li data-id="4">
+                    <img src="/extras-aula-1/icones/eletronicos.svg" alt="Resíduos Eletrônicos">
+                    <span>Resíduos Eletrônicos</span>
+                </li>
+                <li data-id="5">
+                    <img src="/extras-aula-1/icones/organicos.svg" alt="Resíduos Orgânicos">
+                    <span>Resíduos Orgânicos</span>
+                </li>
+                <li data-id="6">
+                    <img src="/extras-aula-1/icones/oleo.svg" alt="Óleo de Cozinha">
+                    <span>Óleo de Cozinha</span>
+                </li>
+            </div>
+
+            <input type="hidden" name="items">
+
+        </fieldset>
+
+        <!--Criamos aqui um botao do tipo submit que vai enviar o conteúdo do meu Form-->
+        <button type="submit">Cadastrar ponto de coleta!</button>
+    </form>
+{% endblock content %}
+
+{% block scripts %}
+    <script src="/Scripts/create-point.js"></script>
+    <!-- Chamando meu script do JS-->
+{% endblock scripts %}
