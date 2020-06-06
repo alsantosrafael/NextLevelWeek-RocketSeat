@@ -87,16 +87,14 @@ function handleSelectedItem(event) {
     const itemId = itemLi.dataset.id//Pegando aqui apenas o data-id de cada item li.Armazenei os data-id em uma variavel
     //Precisamos agora definir um algoritmo que resolva os seguintes problemas:
 
+    console.log('ITEM ID: ', itemId)
     //Verificar se existem itens selecionados com o click do mouse
-
     //pegar os itens selecionados
     const alreadySelected = selectedItems.findIndex( item => {//funcao anonima com uum unico parametro
 
         const itemFound = item == itemId
         return itemFound
     })
-
-
 
     //se já estiverem selecionados, 
     if( alreadySelected >= 0 ){
@@ -112,9 +110,10 @@ function handleSelectedItem(event) {
         //  Adiciocar a selecao
         selectedItems.push(itemId)//inserindo itemId na colecao
         
+        
     } 
 
-
+    console.log('selectedItems: ', selectedItems)
     //atualizar o campo escondido com os itens selecionados
     collectedItems.value = selectedItems
 
